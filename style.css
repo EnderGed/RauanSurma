@@ -1,0 +1,67 @@
+/* Import Google Fonts for Lora and Nunito Sans */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* Define CSS Variables */
+:root {
+    /* Fonts */
+    --font-primary: 'Lora', serif; /* For headings */
+    --font-secondary: 'Nunito Sans', sans-serif; /* For body text */
+
+    /* Colors */
+    --color-bg-light: #F6EEE0;
+    --color-bg-accent: #E4B7A0;
+    --color-text-dark: #A45C40;
+    --color-accent: #C38370;
+}
+
+/* Base body styling */
+body {
+    font-family: var(--font-secondary); /* Default to Nunito Sans */
+}
+
+/* Custom utility for the video placeholder dots */
+.video-placeholder-container {
+    position: relative;
+    background-color: var(--color-bg-accent);
+    overflow: hidden;
+}
+
+.video-placeholder-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.video-placeholder-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid var(--color-text-dark);
+}
+
+/* Hide scrollbar for horizontal scrolling, but still allow scrolling */
+/* For Chrome, Safari, and Opera */
+.overflow-x-auto::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge, and Firefox */
+.overflow-x-auto {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
